@@ -20,8 +20,8 @@ class CountryModel {
 
 /*
 CREATE TABLE Country (
-code VARCHAR(4),
-name VARCHAR(20)
+code VARCHAR(4) PRIMARY KEY,
+name VARCHAR(20) NOT NULL
 );
 
 

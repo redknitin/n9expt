@@ -7,7 +7,7 @@ include 'persist/CountryPersist.php';
 
 class CityController extends \n9fx\DbController {
 	public function index() {
-		$this->data = CityPersist::loadCountries();
+		$this->data = CityPersist::loadCities();
 	}
 
 	public function save() {

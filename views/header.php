@@ -33,6 +33,9 @@
 				</li>
 				-->
 				<li>
+					<a href="DepartmentController.php">Department</a>
+				</li>
+				<li>
 					<a href="CountryController.php">Country</a>
 				</li>
 				<li>

@@ -2,7 +2,7 @@
 require_once 'models/CityModel.php';
 
 class CityPersist {
-	public static function loadCountries() {
+	public static function loadCities() {
 		$sql = 'SELECT code, name, country_code, (SELECT country.name FROM country WHERE country.code=country_code) country_name FROM City';
 		$rset = CityPersist::execSql($sql);
 		$ret_arr = [];

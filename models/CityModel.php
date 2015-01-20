@@ -6,12 +6,11 @@ class CityModel {
 }
 
 /*
-CREATE TABLE City (
-code VARCHAR(4),
-name VARCHAR(20),
-country_code VARCHAR(4)
+CREATE TABLE City(
+code VARCHAR( 4 ) PRIMARY KEY ,
+name VARCHAR( 20 ) NOT NULL ,
+country_code VARCHAR( 4 ) REFERENCES country( code )
 );
-
 
 INSERT INTO  `n9expt`.`city` (
 `code` ,
