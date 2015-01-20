@@ -1,0 +1,12 @@
+{
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/redknitin/n9fx"
+		}
+	],
+	"require": {
+		"redknitin/n9fx": "*@dev",
+		"katzgrau/klogger": "1.0.*"
+	}
+}
