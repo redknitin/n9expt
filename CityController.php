@@ -1,38 +1,42 @@
 <?php
 require_once 'config.php';
 
-include 'models/CountryModel.php';
+include 'models/CityModel.php';
+include 'persist/CityPersist.php';
 include 'persist/CountryPersist.php';
 
-class CountryController extends \n9fx\DbController {
+class CityController extends \n9fx\DbController {
 	public function index() {
-		$this->data = CountryPersist::loadCountries();
+		$this->data = CityPersist::loadCountries();
 	}
 
 	public function save() {
-		$c = new CountryModel();
+		$c = new CityModel();
 		foreach($_POST as $key=>$val) $c->$key=$val;
 		if (isset($_GET['code']) && $_GET['code']!=NULL) {
-			CountryPersist::updateCountry($c, $_GET['code']);
+			CityPersist::updateCity($c, $_GET['code']);
 		} else {
-			CountryPersist::insertCountry($c);
+			CityPersist::insertCity($c);
 		}
 	}
 
 	public function delete() {
-		CountryPersist::deleteCountry($_POST['code']);
+		CityPersist::deleteCity($_POST['code']);
 	}
 
 	public function edit() {
 		if (isset($_GET['code']) && $_GET['code']!=NULL) {
-			$this->data = CountryPersist::getByCode($_GET['code']);
+			$this->data = CityPersist::getByCode($_GET['code']);
 		} else {
-			$this->data = new CountryModel();
+			$this->data = new CityModel();
 		}
+		$this->lookup = [
+			'country' => CountryPersist::loadCountries()
+		];
 	}
 }
 
-$c=new CountryController();
+$c=new CityController();
 $c->process();
 
 
@@ -40,11 +44,11 @@ $c->process();
 /*
 	private function loadCountries() {
 		$c_arr = [
-			new CountryModel([
+			new CityModel([
 				'code' => 'AE',
 				'name' => 'United Arab Emirates'
 			]),
-			new CountryModel([
+			new CityModel([
 				'code' => 'IN',
 				'name' => 'India'
 			])
