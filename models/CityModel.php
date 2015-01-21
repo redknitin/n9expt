@@ -7,9 +7,9 @@ class CityModel {
 
 /*
 CREATE TABLE City (
-code VARCHAR(4),
-name VARCHAR(20),
-country_code VARCHAR(4)
+code VARCHAR(4) PRIMARY KEY,
+name VARCHAR(20) NULL,
+country_code VARCHAR(4) REFERENCES Country(code)
 );
 
 

@@ -1,6 +1,6 @@
 <?php include 'views/header.php'; ?>
 
-<h1>Countries</h1>
+<h1>Cities</h1>
 
 <a href="?action=edit">Add</a>
 
