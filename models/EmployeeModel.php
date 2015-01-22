@@ -3,8 +3,9 @@ class EmployeeModel {
 	public $id;
 	public $name;
 	public $phone;
-	public $email;
-	public $department_id;
+	public $email;	
+	public $position_id;
+	public $city_id; //Residence
 
 	public function __construct($arr = NULL) {
 		if ($arr != NULL) {

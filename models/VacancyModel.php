@@ -1,10 +1,9 @@
 <?php
-class PositionModel {
+class VacancyModel {
 	public $id;
-	public $name;
-	public $description; //Job Description
-	public $count; //Budgeted
-	public $department_id;
+	public $position_id; //Title is obtained from here
+	public $description_override;
+	public $expires_on
 }
 /*
 CREATE TABLE Position (
